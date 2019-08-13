@@ -11,27 +11,27 @@ namespace Clase2
     {
         static void Main(string[] args)
         {
-            List<Persona2> _solicitantes = new List<Persona2>();
+            List<Persona2> personas = new List<Persona2>();
             Program obj = new Program();
-            obj.getSave(_solicitantes);
-            obj.getComplete(_solicitantes, obj);
-            obj.getView(_solicitantes);
+            obj.getSave(personas);
+            obj.getComplete(personas, obj);
+            obj.getView(personas);
             Console.Read();
         }
 
-        private void getComplete(List<Persona2> _solicitantes, Program obj)
+        private void getComplete(List<Persona2> personas, Program obj)
         {
-            foreach (var item in _solicitantes)
+            foreach (var item in personas)
             {
                 item.NombresCompletos = obj.getNombreCompleto(item.Nombres, item.Apellidos);
                 item.Edad = obj.getDate(item.FechaNacimiento);
             }
         }
 
-        private void getView(List<Persona2> _solicitantes)
+        private void getView(List<Persona2> personas)
         {
             int count = 1;
-            foreach (var item in _solicitantes)
+            foreach (var item in personas)
             {
                 Console.WriteLine("================================================");
                 Console.WriteLine("PERSONA: " + count);
@@ -50,7 +50,7 @@ namespace Clase2
             return (zeroTime + span).Year - 1;
         }
 
-        private void getSave(List<Persona2> _solicitantes) {
+        private void getSave(List<Persona2> personas) {
            Persona2 p0 = new Persona2
             {
                 Id = 1,
@@ -90,11 +90,11 @@ namespace Clase2
                 Apellidos = "Bella Lopez",
                 FechaNacimiento = new DateTime(2011, 1, 1)
         };
-            _solicitantes.Add(p0);
-            _solicitantes.Add(p1);
-            _solicitantes.Add(p2);
-            _solicitantes.Add(p3);
-            _solicitantes.Add(p4);
+            personas.Add(p0);
+            personas.Add(p1);
+            personas.Add(p2);
+            personas.Add(p3);
+            personas.Add(p4);
         }
 
         private String getNombreCompleto(String nombre, String apellidos)
