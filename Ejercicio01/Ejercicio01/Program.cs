@@ -11,7 +11,7 @@ namespace Ejercicio01
         static void Main(string[] args)
         {
             Program obj = new Program();
-            Console.WriteLine("==============================");
+            Console.WriteLine("CALCULAR AREA DE RECTANGULO");
             Console.WriteLine(obj.getCoordenadas());
             Console.ReadLine();
         }
@@ -19,48 +19,11 @@ namespace Ejercicio01
         private int getCoordenadas()
         {
             Rectangulo1 r = new Rectangulo1();
-
-            Console.WriteLine("Ingrese primera coordenada");
-
-            Punto p1 = new Punto();
-            p1.x = Int32.Parse(Console.ReadLine());
-            p1.y = Int32.Parse(Console.ReadLine());
-
-
-            Console.WriteLine("Ingrese segunda coordenada");
-            Punto p2 = new Punto();
-            p2.x = Int32.Parse(Console.ReadLine());
-            p2.y = Int32.Parse(Console.ReadLine());
-
-
-            Console.WriteLine("Ingrese tercera coordenada");
-            Punto p3 = new Punto();
-            p3.x = Int32.Parse(Console.ReadLine());
-            p3.y = Int32.Parse(Console.ReadLine());
-
-
-            Console.WriteLine("Ingrese cuarta coordenada");
-            Punto p4 = new Punto();
-            p4.x = Int32.Parse(Console.ReadLine());
-            p4.y = Int32.Parse(Console.ReadLine());
-
-            
-            r.p1 = p1;
-            r.p2 = p2;
-            r.p3 = p3;
-            r.p4 = p4;
-
+            getInsert(r);
             double ancho1 = getDistancia(r.p1, r.p2);
-            Console.WriteLine("ancho 1-->  "+ ancho1);
-
             double largo1 = getDistancia(r.p2, r.p3);
-            Console.WriteLine("largo 1---> " + largo1);
-
             double ancho2 = getDistancia(r.p3, r.p4);
-            Console.WriteLine("ancho 2--->  " + ancho2);
-
             double largo2 = getDistancia(r.p1, r.p4);
-            Console.WriteLine("largo 2---> " + largo2);
 
             double respuesta = 0;
 
@@ -77,6 +40,30 @@ namespace Ejercicio01
 
             return area;
         }
+
+        public Punto getNewPunto(){
+             Punto punto = new Punto();
+             punto.x = Int32.Parse(Console.ReadLine());
+             punto.y = Int32.Parse(Console.ReadLine());
+             return punto;
+        }
+
+        public void getInsert(Rectangulo1 rectangulo){
+             Console.WriteLine("Ingrese primera coordenada");
+             Punto p1 = getNewPunto();
+             Console.WriteLine("Ingrese segunda coordenada");
+             Punto p2 = getNewPunto();
+             Console.WriteLine("Ingrese tercera coordenada");
+             Punto p3 = getNewPunto();
+             Console.WriteLine("Ingrese cuarta coordenada");
+             Punto p4 = getNewPunto();
+             rectangulo.p1 = p1;
+             rectangulo.p2 = p2;
+             rectangulo.p3 = p3;
+             rectangulo.p4 = p4;
+        }
+
+
         public double getDistancia(Punto p1, Punto p2)
         {
             int cox = p2.x - p1.x;
