@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App2"
+             x:Class="App2.MainPage">
+
+    <StackLayout>
+
+
+        <Button Text="Ejemplo 01" TextColor="Accent" Clicked="ejem01"></Button>
+        <Button Text="Ejemplo 02" TextColor="Accent" Clicked="ejem02"></Button>
+        <Button Text="Relative Layout" TextColor="Accent" Clicked="ejem03"></Button>
+        <Button Text="Relative Layout Code" TextColor="Accent" Clicked="ejem07"></Button>
+        <Button Text="Grid" TextColor="Accent" Clicked="ejem04"></Button>
+        <Button Text="Grid Demo" TextColor="Accent" Clicked="ejem06"></Button>
+        <Button Text="ScrollViewDemo" TextColor="Accent" Clicked="ejem05"></Button>
+        <Button Text="ScrollViewDemo Code" TextColor="Accent" Clicked="ejem08"></Button>
+        
+        
+        
+    </StackLayout>
+
+</ContentPage>
